@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-type PortfolioPath = "splash" | "developer" | "non-developer";
+type PortfolioPath = "splash" | "developer" | "brutalist";
 
 interface PortfolioState {
   currentPath: PortfolioPath;

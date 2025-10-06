@@ -1,7 +1,7 @@
 export default function DeveloperPortfolio() {
   return (
     <>
-      <h1>DeveloperPortfolio</h1>
+      <h1>DEVELOPER Portfolio</h1>
     </>
   );
 }

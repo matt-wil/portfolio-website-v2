@@ -12,6 +12,39 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  /* Splash Screen - Monochrome */
+  --splash-bg: 0 0% 5%;
+  --splash-fg: 0 0% 96%;
+  --splash-accent: 217 91% 50%;
+
+  /* Developer Path - Tokyo Night Inspired */
+  --dev-bg: 222 15% 11%;
+  --dev-bg-dark: 220 16% 8%;
+  --dev-fg: 220 14% 71%;
+  --dev-comment: 220 10% 40%;
+  --dev-cyan: 187 47% 55%;
+  --dev-green: 158 64% 52%;
+  --dev-orange: 25 100% 62%;
+  --dev-purple: 267 67% 68%;
+  --dev-red: 0 73% 65%;
+  --dev-yellow: 41 88% 64%;
+  --dev-blue: 217 92% 76%;
+  --dev-glow: 217 92% 76% / 0.3;
+
+  /* Non-Developer Path - Brutalist Blueprint */
+  --blueprint-bg: 0 0% 97%;
+  --blueprint-fg: 0 0% 7%;
+  --blueprint-grid: 0 0% 88%;
+  --blueprint-accent: 11 100% 60%;
+
+  /* Default semantic tokens */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -23,4 +56,36 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Animations */
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.blueprint-grid {
+  background-image:
+    linear-gradient(hsl(var(--blueprint-grid)) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, hsl(var(--blueprint-grid)) 0.5px, transparent 0.5px);
+  background-size: calc(100% / 12) 2rem;
 }

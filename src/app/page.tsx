@@ -1,14 +1,18 @@
-import { div } from "motion/react-client";
+"use client";
+
+import SplashPage from "@/components/splash/SplashPage";
+import BrutalistPortfolio from "@/components/paths/brutalist/BrutalistPortfolio";
+import DeveloperPortfolio from "@/components/paths/developer/DeveloperPortfolio";
+import { usePortfolioStore } from "@/store/usePortfolioStore";
 
 export default function Home() {
+  const currentPath = usePortfolioStore((state) => state.currentPath);
+
   return (
-    <section className="flex flex-col flex-1/2">
-      <div>
-        <h1 className="uppercase font-bold">developer?</h1>
-      </div>
-      <div>
-        <h1 className="uppercase font-bold">not a developer?</h1>
-      </div>
-    </section>
+    <>
+      {currentPath === "splash" && <SplashPage />}
+      {currentPath === "developer" && <DeveloperPortfolio />}
+      {currentPath === "brutalist" && <BrutalistPortfolio />}
+    </>
   );
 }
