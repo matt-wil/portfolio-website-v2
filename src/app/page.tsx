@@ -1,3 +1,18 @@
+"use client";
+
+import { SplashPage } from "@/components/SplashPage";
+import { DeveloperPath } from "@/paths/developer/DeveloperPath";
+import { BrutalistPath } from "@/paths/brutalist/BrutalistPath";
+import { usePathStore } from "@/store/pathStore";
+
 export default function Page() {
-  return <h1>Hello Next.js!</h1>;
+  const currentPath = usePathStore((state) => state.currentPath);
+
+  return (
+    <>
+      {currentPath === "splash" && <SplashPage />}
+      {currentPath === "developer" && <DeveloperPath />}
+      {currentPath === "designer" && <BrutalistPath />}
+    </>
+  );
 }
