@@ -8,6 +8,7 @@ import { ReadmeBuffer } from "@/components/developer/buffers/ReadmeBuffer";
 import { AboutBuffer } from "@/components/developer/buffers/AboutBuffer";
 import { ProjectBuffer } from "@/components/developer/buffers/ProjectBuffer";
 import { ContactBuffer } from "@/components/developer/buffers/ContactBuffer";
+import { ProjectsListBuffer } from "@/components/developer/buffers/ProjectListBuffer";
 
 type BufferType = "README.md" | "about.lua" | string;
 
@@ -75,7 +76,12 @@ export const DeveloperPath = () => {
       return <AboutBuffer />;
     } else if (currentBuffer === "contact.md") {
       return <ContactBuffer />;
-    } else if (currentBuffer.startsWith("projects/")) {
+    } else if (currentBuffer === "projects/") {
+      return <ProjectsListBuffer />;
+    } else if (
+      currentBuffer.startsWith("projects/") &&
+      currentBuffer !== "projects/"
+    ) {
       const filename = currentBuffer.replace("projects/", "");
       return <ProjectBuffer filename={filename} />;
     }

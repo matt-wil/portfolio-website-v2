@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, steps } from "framer-motion";
 import { useState } from "react";
 import { usePathStore } from "@/store/pathStore";
 import { TypingText } from "@/components/developer/TypingText";
@@ -56,7 +56,6 @@ export const SplashPage = () => {
       >
         <div className="relative flex flex-col items-center text-center">
           {" "}
-          {/* Use flex here */}
           <motion.h1
             className="select-none font-sans text-splash-heading font-bold uppercase tracking-tight text-splash-fg"
             whileHover={{
@@ -65,17 +64,14 @@ export const SplashPage = () => {
           >
             DEVELOPER?
           </motion.h1>
-          {/* Conditionally render TypingText on hover */}
           {hoveredSide === "developer" && (
             <TypingText
-              // Key changes on hover state change, forcing remount & restart
               key={hoveredSide}
               text={codeSnippet}
               className="ml-4 font-mono text-xl text-cat-green" // Style as code
-              speed={50} // Adjust speed as needed
+              speed={50}
             />
           )}
-          {/* Show blinking cursor only when NOT hovered */}
           {hoveredSide !== "developer" && (
             <motion.span
               className="ml-1 inline-block text-splash-fg"
@@ -102,7 +98,7 @@ export const SplashPage = () => {
               ? "selected"
               : "hidden"
         }
-        transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
+        transition={{ duration: 0.01, type: "tween", ease: "linear" }}
         onHoverStart={() => setHoveredSide("designer")}
         onHoverEnd={() => setHoveredSide(null)}
         onClick={() => handleClick("designer")}
@@ -119,7 +115,11 @@ export const SplashPage = () => {
           whileHover={{
             scale: 2.5,
             rotate: -25,
-            transition: { type: "spring", stiffness: 200, damping: 20 },
+            transition: {
+              type: "tween",
+              duration: 0.25,
+              ease: steps(3, "end"),
+            },
           }}
         >
           <motion.h1
@@ -128,6 +128,7 @@ export const SplashPage = () => {
             animate={{
               opacity: selectedSide === "designer" || !selectedSide ? 1 : 0,
             }}
+            transition={{ duration: 0.01, ease: "linear" }}
           >
             {/* Split text onto multiple lines */}
             NOT

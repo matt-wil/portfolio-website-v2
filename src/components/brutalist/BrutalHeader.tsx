@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export const BrutalistHeader = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between border-b-2 border-brutalist-text bg-brutalist-bg/80 px-8 py-4 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between border-b-2 border-brutalist-text px-8 py-4">
       {/* Left Side: Name/Logo */}
       <div>
         <Link
           href="/"
-          className="relative translate-y-1  px-2 mt-10 font-display text-xl font-bold uppercase text-brutalist-accent md:text-2xl"
+          className="relative translate-y-1 px-2 mt-10 font-display text-xl font-bold uppercase text-brutalist-accent md:text-2xl"
         >
           Matt Williams
         </Link>

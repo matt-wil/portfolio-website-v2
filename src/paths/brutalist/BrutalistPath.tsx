@@ -6,7 +6,7 @@ import { BrutalistHeader } from "@/components/brutalist/BrutalHeader";
 
 export const BrutalistPath = () => {
   return (
-    <div className="min-h-screen bg-brutalist-bg font-sans">
+    <div className="min-h-screen bg-brutalist-bg theme-brutalist font-sans">
       <BrutalistHeader />
       {/* Background Grid */}
       <div
@@ -170,6 +170,15 @@ export const BrutalistPath = () => {
                           <p className="text-sm text-brutalist-text">
                             {project.solution}
                           </p>
+                        </div>
+                        <div>
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Live
+                          </a>
                         </div>
                         <div>
                           <h5 className="mb-1 font-mono text-xs font-bold text-brutalist-text">

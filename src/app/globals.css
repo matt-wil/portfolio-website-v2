@@ -86,7 +86,7 @@
         /* Specific Theme Palettes */
         --splash-bg: 220 10% 5%;
         --splash-fg: 0 0% 96%;
-        --splash-accent: 16 100% 58%;
+        --splash-accent: 240 100% 50%;
         --cat-base: 240 21% 15%;
         --cat-mantle: 240 21% 12%;
         --cat-crust: 240 23% 9%;
@@ -107,7 +107,7 @@
         --brutalist-bg: 0 0% 97%;
         --brutalist-text: 0 0% 7%;
         --brutalist-grid: 0 0% 88%;
-        --brutalist-accent: 4 100% 60%;
+        --brutalist-accent: 240 100% 50%;
     }
 
     /* -- Brutalist Theme Overrides -- */
