@@ -1,26 +1,155 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+    /* -- Font Families -- */
+    --font-mono: "JetBrains Mono", monospace;
+    --font-sans: "Inter", sans-serif;
+    --font-display: "Archivo Black", sans-serif;
+
+    /* -- Font Sizes -- */
+    --text-splash-heading: clamp(2.5rem, 6vw, 4.5rem);
+    --text-brutalist-hero: clamp(5rem, 12vw, 10rem);
+    --text-brutalist-h2: clamp(2rem, 5vw, 3.5rem);
+
+    /* -- Colors -- */
+    --color-splash-bg: hsl(var(--splash-bg));
+    --color-splash-fg: hsl(var(--splash-fg));
+    --color-splash-accent: hsl(var(--splash-accent));
+    --color-cat-base: hsl(var(--cat-base));
+    --color-cat-mantle: hsl(var(--cat-mantle));
+    --color-cat-crust: hsl(var(--cat-crust));
+    --color-cat-text: hsl(var(--cat-text));
+    --color-cat-subtext: hsl(var(--cat-subtext));
+    --color-cat-mauve: hsl(var(--cat-mauve));
+    --color-cat-blue: hsl(var(--cat-blue));
+    --color-cat-sapphire: hsl(var(--cat-sapphire));
+    --color-cat-sky: hsl(var(--cat-sky));
+    --color-cat-teal: hsl(var(--cat-teal));
+    --color-cat-green: hsl(var(--cat-green));
+    --color-cat-yellow: hsl(var(--cat-yellow));
+    --color-cat-peach: hsl(var(--cat-peach));
+    --color-cat-red: hsl(var(--cat-red));
+    --color-cat-surface0: hsl(var(--cat-surface0));
+    --color-cat-surface1: hsl(var(--cat-surface1));
+    --color-cat-overlay0: hsl(var(--cat-overlay0));
+    --color-brutalist-bg: hsl(var(--brutalist-bg));
+    --color-brutalist-text: hsl(var(--brutalist-text));
+    --color-brutalist-grid: hsl(var(--brutalist-grid));
+    --color-brutalist-accent: hsl(var(--brutalist-accent));
+
+    /* -- General Semantic Colors -- */
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
+    --color-accent: hsl(var(--accent));
+    --color-destructive: hsl(var(--destructive));
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+
+    /* -- Border Radius -- */
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    /* -- Animation -- */
+    --animation-blink: blink 1s step-end infinite;
+    --animation-typing: typing 2s steps(40, end);
+
+    /* -- Breakpoints -- */
+    --breakpoint-2xl: 1400px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@layer base {
+    :root {
+        /* -- Default Theme: Catppuccin Mocha (Dark Developer) -- */
+        --background: var(--cat-base);
+        --foreground: var(--cat-text);
+        --primary: var(--cat-mauve);
+        --primary-foreground: var(--cat-base);
+        --secondary: var(--cat-surface0);
+        --secondary-foreground: var(--cat-text);
+        --muted: var(--cat-surface1);
+        --muted-foreground: var(--cat-subtext);
+        --accent: var(--cat-blue);
+        --destructive: var(--cat-red);
+        --border: var(--cat-surface0);
+        --input: var(--cat-surface1);
+        --ring: var(--cat-mauve);
+        --radius: 0.25rem;
+
+        /* Specific Theme Palettes */
+        --splash-bg: 220 10% 5%;
+        --splash-fg: 0 0% 96%;
+        --splash-accent: 217 100% 50%;
+        --cat-base: 240 21% 15%;
+        --cat-mantle: 240 21% 12%;
+        --cat-crust: 240 23% 9%;
+        --cat-text: 226 64% 88%;
+        --cat-subtext: 227 35% 80%;
+        --cat-mauve: 267 84% 81%;
+        --cat-blue: 217 92% 76%;
+        --cat-sapphire: 199 76% 69%;
+        --cat-sky: 189 71% 73%;
+        --cat-teal: 170 57% 73%;
+        --cat-green: 115 54% 76%;
+        --cat-yellow: 41 88% 75%;
+        --cat-peach: 23 92% 75%;
+        --cat-red: 343 81% 75%;
+        --cat-surface0: 237 16% 23%;
+        --cat-surface1: 233 13% 27%;
+        --cat-overlay0: 230 13% 41%;
+        --brutalist-bg: 0 0% 97%;
+        --brutalist-text: 0 0% 7%;
+        --brutalist-grid: 0 0% 88%;
+        --brutalist-accent: 4 100% 60%;
+    }
+
+    /* -- Brutalist Theme Overrides -- */
+    .theme-brutalist {
+        --background: var(--brutalist-bg);
+        --foreground: var(--brutalist-text);
+        --primary: var(--brutalist-accent);
+        --primary-foreground: var(--brutalist-bg);
+        --secondary: hsl(var(--brutalist-grid));
+        --secondary-foreground: var(--brutalist-text);
+        --muted: hsl(var(--brutalist-grid));
+        --muted-foreground: hsl(var(--brutalist-text) / 0.6);
+        --accent: var(--brutalist-accent);
+        --destructive: 0 84.2% 60.2%;
+        --border: var(--brutalist-text);
+        --input: var(--brutalist-bg);
+        --ring: var(--brutalist-accent);
+        --radius: 0rem;
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@layer base {
+    body {
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+    }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes blink {
+    "0%, 49%" {
+        opacity: 1;
+    }
+    "50%, 100%" {
+        opacity: 0;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: "0";
+    }
+    to {
+        width: "100%";
+    }
 }

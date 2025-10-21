@@ -1,14 +1,18 @@
-import { div } from "motion/react-client";
+"use client";
 
-export default function Home() {
+import { SplashPage } from "@/components/SplashPage";
+import { DeveloperPath } from "@/paths/developer/DeveloperPath";
+import { BrutalistPath } from "@/paths/brutalist/BrutalistPath";
+import { usePathStore } from "@/store/pathStore";
+
+export default function Page() {
+  const currentPath = usePathStore((state) => state.currentPath);
+
   return (
-    <section className="flex flex-col flex-1/2">
-      <div>
-        <h1 className="uppercase font-bold">developer?</h1>
-      </div>
-      <div>
-        <h1 className="uppercase font-bold">not a developer?</h1>
-      </div>
-    </section>
+    <>
+      {currentPath === "splash" && <SplashPage />}
+      {currentPath === "developer" && <DeveloperPath />}
+      {currentPath === "designer" && <BrutalistPath />}
+    </>
   );
 }
