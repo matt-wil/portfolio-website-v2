@@ -176,8 +176,9 @@ export const BrutalistPath = () => {
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="block hover:text-brutalist-accent hover:underline"
                           >
-                            Live
+                            / Live /
                           </a>
                         </div>
                         <div>
