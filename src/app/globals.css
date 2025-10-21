@@ -55,7 +55,7 @@
         /**-- Splash Theme --**/
         --splash-bg: 220 10% 98%;
         --splash-fg: 220 10% 10%;
-        --splash-accent: 240 100% 60%;
+        --splash-accent: 270 100% 60%;
 
         /* Non Dev (Light) */
         --brutalist-bg: 0 0% 97%;
@@ -70,7 +70,7 @@
             /**-- Splash Theme --**/
             --splash-bg: 220 10% 5%;
             --splash-fg: 0 0% 96%;
-            --splash-accent: 240 100% 60%;
+            --splash-accent: 270 100% 60%;
 
             /* Non Dev */
             --brutalist-bg: 240 3% 12%; /* Dark cool gray */
@@ -103,13 +103,13 @@
         --dev-crust: 240 23% 9%;
         --dev-text: 226 64% 88%;
         --dev-subtext: 227 35% 80%;
-        --dev-purple: 267 84% 81%; /* Mapped from mauve */
+        --dev-purple: 267 84% 81%;
         --dev-blue: 217 92% 76%;
         --dev-sky: 189 71% 73%;
         --dev-teal: 170 57% 73%;
         --dev-green: 115 54% 76%;
         --dev-yellow: 41 88% 75%;
-        --dev-orange: 23 92% 75%; /* Mapped from peach */
+        --dev-orange: 23 92% 75%;
         --dev-red: 343 81% 75%;
         --dev-surface0: 237 16% 23%;
         --dev-surface1: 233 13% 27%;

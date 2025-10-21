@@ -44,7 +44,7 @@ export const MobileSplash = () => {
         }}
       >
         <h1 className="select-none text-center font-sans text-splash-heading font-bold uppercase tracking-tight text-splash-fg">
-          DEVELOPER?
+          ENTER_VIM
         </h1>
       </motion.div>
 
@@ -73,11 +73,9 @@ export const MobileSplash = () => {
           className="select-none whitespace-nowrap text-center font-sans text-splash-heading font-bold uppercase leading-none tracking-tight"
           style={{ color: "hsl(var(--brutalist-bg))" }}
         >
-          NOT
+          ENTER
           <br />
-          A
-          <br />
-          DEVELOPER?
+          WEBSITE
         </motion.h1>
       </motion.div>
     </div>

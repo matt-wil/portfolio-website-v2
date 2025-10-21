@@ -67,7 +67,7 @@ export const SplashPage = () => {
                 textShadow: "0 0 30px rgba(245, 245, 245, 0.4)",
               }}
             >
-              DEVELOPER?
+              ENTER_VIM
             </motion.h1>
             {hoveredSide === "developer" && (
               <TypingText
@@ -136,11 +136,9 @@ export const SplashPage = () => {
               transition={{ duration: 0.01, ease: "linear" }}
             >
               {/* Split text onto multiple lines */}
-              NOT
+              ENTER
               <br />
-              A
-              <br />
-              DEVELOPER?
+              WEBSITE
             </motion.h1>
           </motion.div>
         </motion.div>
