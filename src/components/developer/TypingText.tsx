@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 interface TypingTextProps {
   text: string;
@@ -8,11 +7,43 @@ interface TypingTextProps {
   speed?: number;
 }
 
+const highlightCode = (code: string) => {
+  const lines = code.split("\n");
+
+  return lines.map((line, lineIndex) => {
+    const indentMatch = line.match(/^(\s*)/);
+    const indent = indentMatch ? indentMatch[0] : "";
+    const codePart = line.slice(indent.length);
+
+    const highlightedPart = codePart
+      .replace(/const|if|return/g, '<span class="text-cat-mauve">$&</span>') // Keywords
+      .replace(
+        /checkIfDeveloper|enter/g,
+        '<span class="text-cat-blue">$&</span>',
+      ) // Function names
+      .replace(/understands/g, '<span class="text-cat-yellow">$&</span>') // Parameter
+      .replace(/boolean|void/g, '<span class="text-cat-yellow">$&</span>') // TypeScript Types
+      .replace(/true/g, '<span class="text-cat-peach">$&</span>') // Boolean
+      .replace(
+        /\{|\}|\(|\)|===|;|: |=>/g,
+        '<span class="text-cat-sky">$&</span>',
+      ); // UPDATED: Operators/Punctuation
+
+    return (
+      <React.Fragment key={lineIndex}>
+        {indent}
+        <span dangerouslySetInnerHTML={{ __html: highlightedPart }} />
+        {lineIndex < lines.length - 1 ? "\n" : ""} {/* Add newline back */}
+      </React.Fragment>
+    );
+  });
+};
+
 export const TypingText = ({
   text,
   className = "",
   delay = 0,
-  speed = 30,
+  speed = 40,
 }: TypingTextProps) => {
   const [displayedText, setDisplayedText] = useState("");
 
@@ -33,5 +64,5 @@ export const TypingText = ({
     return () => clearTimeout(timeout);
   }, [text, delay, speed]);
 
-  return <span className={className}>{displayedText}</span>;
+  return <span className={className}>{highlightCode(displayedText)}</span>;
 };

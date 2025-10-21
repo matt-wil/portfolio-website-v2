@@ -1,20 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { files } from "@/lib/constants";
 
 interface FuzzyFinderProps {
   isOpen: boolean;
   onClose: () => void;
   onSelect: (file: string) => void;
 }
-
-const files = [
-  { name: "README.md", icon: "", type: "markdown" },
-  { name: "about.lua", icon: "", type: "lua" },
-  { name: "projects/", icon: "", type: "directory" },
-  { name: "projects/ecommerce-platform.md", icon: "", type: "markdown" },
-  { name: "projects/ai-chatbot.md", icon: "", type: "markdown" },
-  { name: "projects/portfolio-site.md", icon: "", type: "markdown" },
-];
 
 export const FuzzyFinder = ({
   isOpen,

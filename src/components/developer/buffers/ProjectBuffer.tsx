@@ -1,33 +1,8 @@
+import { devProjects as projects } from "@/lib/constants";
+
 interface ProjectBufferProps {
   filename: string;
 }
-
-const projects: Record<string, any> = {
-  "ecommerce-platform.md": {
-    title: "E-Commerce Platform",
-    description:
-      "A full-stack e-commerce solution with real-time inventory management",
-    tech: ["React", "Node.js", "PostgreSQL", "Redis", "Stripe"],
-    github: "github.com/yourname/ecommerce",
-    demo: "demo.ecommerce.dev",
-  },
-  "ai-chatbot.md": {
-    title: "AI-Powered Chatbot",
-    description:
-      "Intelligent conversational AI with natural language processing",
-    tech: ["Python", "TensorFlow", "FastAPI", "React", "WebSocket"],
-    github: "github.com/yourname/ai-chatbot",
-    demo: "chatbot.demo.dev",
-  },
-  "portfolio-site.md": {
-    title: "Interactive Portfolio",
-    description:
-      "The very site you are looking at - a neovim-inspired experience",
-    tech: ["React", "TypeScript", "Framer Motion", "Tailwind"],
-    github: "github.com/yourname/portfolio",
-    demo: "yourname.dev",
-  },
-};
 
 export const ProjectBuffer = ({ filename }: ProjectBufferProps) => {
   const project = projects[filename];

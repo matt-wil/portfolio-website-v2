@@ -1,18 +1,27 @@
-"use client";
+import Index from "@/components/Index";
+import { type Metadata } from "next";
 
-import { SplashPage } from "@/components/SplashPage";
-import { DeveloperPath } from "@/paths/developer/DeveloperPath";
-import { BrutalistPath } from "@/paths/brutalist/BrutalistPath";
-import { usePathStore } from "@/store/pathStore";
+export const metadata: Metadata = {
+  title: "Matt Williams - Full-Stack Developer & Designer",
+  description:
+    "Portfolio website of Matt Williams, showcasing full-stack development and design projects.",
+  keywords: [
+    "Matt Williams",
+    "Full-Stack Developer",
+    "Web Developer",
+    "UI/UX Designer",
+    "Portfolio",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "CSS",
+    "HTML",
+    "Graphic Design",
+  ],
+  authors: [{ name: "Matt Williams", url: "https://matt-williams.net" }],
+};
 
 export default function Page() {
-  const currentPath = usePathStore((state) => state.currentPath);
-
-  return (
-    <>
-      {currentPath === "splash" && <SplashPage />}
-      {currentPath === "developer" && <DeveloperPath />}
-      {currentPath === "designer" && <BrutalistPath />}
-    </>
-  );
+  return <Index />;
 }

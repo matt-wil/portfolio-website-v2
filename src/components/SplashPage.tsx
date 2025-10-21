@@ -3,6 +3,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { usePathStore } from "@/store/pathStore";
+import { TypingText } from "@/components/developer/TypingText";
+
+const codeSnippet = `const checkIfDeveloper = (understands: boolean): void => {
+  if (understands === true) {
+    return enter();
+  }
+};`;
 
 export const SplashPage = () => {
   const [hoveredSide, setHoveredSide] = useState<
@@ -47,7 +54,9 @@ export const SplashPage = () => {
           }
         }}
       >
-        <div className="relative">
+        <div className="relative flex flex-col items-center text-center">
+          {" "}
+          {/* Use flex here */}
           <motion.h1
             className="select-none font-sans text-splash-heading font-bold uppercase tracking-tight text-splash-fg"
             whileHover={{
@@ -56,7 +65,18 @@ export const SplashPage = () => {
           >
             DEVELOPER?
           </motion.h1>
+          {/* Conditionally render TypingText on hover */}
           {hoveredSide === "developer" && (
+            <TypingText
+              // Key changes on hover state change, forcing remount & restart
+              key={hoveredSide}
+              text={codeSnippet}
+              className="ml-4 font-mono text-xl text-cat-green" // Style as code
+              speed={50} // Adjust speed as needed
+            />
+          )}
+          {/* Show blinking cursor only when NOT hovered */}
+          {hoveredSide !== "developer" && (
             <motion.span
               className="ml-1 inline-block text-splash-fg"
               initial={{ opacity: 0 }}
@@ -71,7 +91,7 @@ export const SplashPage = () => {
 
       {/* Designer Side */}
       <motion.div
-        className="relative flex h-full cursor-pointer items-center justify-center"
+        className="relative flex h-full cursor-pointer items-center justify-center overflow-hidden"
         style={{ backgroundColor: "hsl(var(--splash-bg))" }}
         variants={variants}
         initial="initial"
@@ -93,9 +113,30 @@ export const SplashPage = () => {
           }
         }}
       >
-        <h1 className="select-none font-sans text-splash-heading font-bold uppercase tracking-tight text-splash-fg">
-          NOT A DEVELOPER?
-        </h1>
+        {/* Wrapper for text animation */}
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center"
+          whileHover={{
+            scale: 2.5,
+            rotate: -25,
+            transition: { type: "spring", stiffness: 200, damping: 20 },
+          }}
+        >
+          <motion.h1
+            className="select-none whitespace-nowrap text-center font-sans text-splash-heading font-bold uppercase leading-none tracking-tight text-splash-fg"
+            initial={{ opacity: 1 }}
+            animate={{
+              opacity: selectedSide === "designer" || !selectedSide ? 1 : 0,
+            }}
+          >
+            {/* Split text onto multiple lines */}
+            NOT
+            <br />
+            A
+            <br />
+            DEVELOPER?
+          </motion.h1>
+        </motion.div>
       </motion.div>
     </div>
   );
