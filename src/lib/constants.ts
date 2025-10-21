@@ -1,6 +1,6 @@
 export const projects = [
   {
-    title: "Business Website Rebuild",
+    title: "Business Website",
     client: "Anker Tattoo & Piercing",
     year: "2025",
     challenge:
@@ -17,7 +17,7 @@ export const projects = [
   },
   {
     title: "Full-Stack Ratings App",
-    client: "Myself",
+    client: "Bootcamp Project",
     year: "2024",
     challenge:
       "Design and develop a full-stack application to allow users to rate and save movies",
@@ -46,7 +46,7 @@ export const devProjects: Record<string, any> = {
       "Tailwind",
       "Next-intl",
     ],
-    github: "github.com/matt-will/anker-freiburg",
+    github: "github.com/matt-wil/anker-freiburg",
     demo: "www.anker-tattoo.de",
   },
   "popcorn-picker.md": {

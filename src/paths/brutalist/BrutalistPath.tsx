@@ -6,11 +6,10 @@ import { BrutalistHeader } from "@/components/brutalist/BrutalHeader";
 
 export const BrutalistPath = () => {
   return (
-    <div className="min-h-screen bg-brutalist-bg theme-brutalist font-sans">
-      <BrutalistHeader />
+    <div className="min-h-screen bg-brutalist-bg font-sans">
       {/* Background Grid */}
       <div
-        className="pointer-events-none fixed inset-0 opacity-30"
+        className="pointer-events-none fixed inset-0 opacity-100"
         style={{
           backgroundImage: `
             linear-gradient(to right, hsl(var(--brutalist-grid)) 1px, transparent 1px),
@@ -22,6 +21,7 @@ export const BrutalistPath = () => {
 
       {/* Content */}
       <div className="relative">
+        <BrutalistHeader />
         {/* Hero Section */}
         <section className="grid min-h-screen grid-cols-12 gap-x-4 px-8 py-20">
           <motion.div
@@ -35,7 +35,7 @@ export const BrutalistPath = () => {
               <br />
               THAT
               <br />
-              WORKS.
+              <span className="text-brutalist-accent">WORKS.</span>
             </h1>
             <motion.h2
               className="mt-8 text-brutalist-h2 font-bold text-brutalist-text"
@@ -43,7 +43,7 @@ export const BrutalistPath = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              Pixel-perfect font-ends
+              Creative front-ends
               <br />
               backed by robust, full-stack solutions.
             </motion.h2>
@@ -208,7 +208,7 @@ export const BrutalistPath = () => {
         {/* Contact Section */}
         <section
           id="contact"
-          className="border-t-4 border-brutalist-text px-8 py-32"
+          className="border-t-4 border-brutalist-text px-8 py-32 flex justify-between"
         >
           <SectionHeading number="3" className="mb-8">
             Contact

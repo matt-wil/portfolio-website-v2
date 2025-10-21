@@ -8,7 +8,7 @@
 
     /* -- Font Sizes -- */
     --text-splash-heading: clamp(2.5rem, 6vw, 4.5rem);
-    --text-brutalist-hero: clamp(5rem, 12vw, 10rem);
+    --text-brutalist-hero: clamp(5rem, 14vw, 17rem);
     --text-brutalist-h2: clamp(2rem, 5vw, 3.5rem);
 
     /* -- Colors -- */
@@ -108,24 +108,6 @@
         --brutalist-text: 0 0% 7%;
         --brutalist-grid: 0 0% 88%;
         --brutalist-accent: 240 100% 50%;
-    }
-
-    /* -- Brutalist Theme Overrides -- */
-    .theme-brutalist {
-        --background: var(--brutalist-bg);
-        --foreground: var(--brutalist-text);
-        --primary: var(--brutalist-accent);
-        --primary-foreground: var(--brutalist-bg);
-        --secondary: hsl(var(--brutalist-grid));
-        --secondary-foreground: var(--brutalist-text);
-        --muted: hsl(var(--brutalist-grid));
-        --muted-foreground: hsl(var(--brutalist-text) / 0.6);
-        --accent: var(--brutalist-accent);
-        --destructive: 0 84.2% 60.2%;
-        --border: var(--brutalist-text);
-        --input: var(--brutalist-bg);
-        --ring: var(--brutalist-accent);
-        --radius: 0rem;
     }
 }
 

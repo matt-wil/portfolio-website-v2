@@ -9,6 +9,7 @@ import { AboutBuffer } from "@/components/developer/buffers/AboutBuffer";
 import { ProjectBuffer } from "@/components/developer/buffers/ProjectBuffer";
 import { ContactBuffer } from "@/components/developer/buffers/ContactBuffer";
 import { ProjectsListBuffer } from "@/components/developer/buffers/ProjectListBuffer";
+import { DevMobilePath } from "@/components/developer/DevMobilePath";
 
 type BufferType = "README.md" | "about.lua" | string;
 
@@ -89,42 +90,48 @@ export const DeveloperPath = () => {
   };
 
   return (
-    <div className="flex h-screen w-screen flex-col bg-cat-base font-mono text-cat-text">
-      {/* CRT Scanline Effect */}
-      <div
-        className="pointer-events-none fixed inset-0 z-50 opacity-5"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.1) 2px, rgba(255, 255, 255, 0.1) 4px)",
-        }}
-      />
+    <>
+      <div className="md:hidden">
+        <DevMobilePath />
+      </div>
 
-      {/* Main Buffer */}
-      <NeoVimBuffer lines={getLineCount()}>{renderBuffer()}</NeoVimBuffer>
+      <div className="hidden md:flex h-screen w-screen flex-col bg-cat-base font-mono text-cat-text">
+        {/* CRT Scanline Effect */}
+        <div
+          className="pointer-events-none fixed inset-0 z-50 opacity-5"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.1) 2px, rgba(255, 255, 255, 0.1) 4px)",
+          }}
+        />
 
-      {/* Status Line & Command Bar */}
-      <StatusLine
-        mode={mode}
-        filename={currentBuffer}
-        filetype={getFileType(currentBuffer)}
-        line={cursorPos.line}
-        col={cursorPos.col}
-      />
+        {/* Main Buffer */}
+        <NeoVimBuffer lines={getLineCount()}>{renderBuffer()}</NeoVimBuffer>
 
-      {/* Command Bar */}
-      {command && (
-        <div className="border-t border-cat-surface0 bg-cat-base px-4 py-1 font-mono text-sm text-cat-text">
-          {command}
-          <span className="animate-blink">▋</span>
-        </div>
-      )}
+        {/* Status Line & Command Bar */}
+        <StatusLine
+          mode={mode}
+          filename={currentBuffer}
+          filetype={getFileType(currentBuffer)}
+          line={cursorPos.line}
+          col={cursorPos.col}
+        />
 
-      {/* Fuzzy Finder Modal */}
-      <FuzzyFinder
-        isOpen={isFuzzyOpen}
-        onClose={() => setIsFuzzyOpen(false)}
-        onSelect={handleFileSelect}
-      />
-    </div>
+        {/* Command Bar */}
+        {command && (
+          <div className="border-t border-cat-surface0 bg-cat-base px-4 py-1 font-mono text-sm text-cat-text">
+            {command}
+            <span className="animate-blink">▋</span>
+          </div>
+        )}
+
+        {/* Fuzzy Finder Modal */}
+        <FuzzyFinder
+          isOpen={isFuzzyOpen}
+          onClose={() => setIsFuzzyOpen(false)}
+          onSelect={handleFileSelect}
+        />
+      </div>
+    </>
   );
 };

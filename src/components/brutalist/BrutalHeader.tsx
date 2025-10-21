@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const BrutalistHeader = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between border-b-2 border-brutalist-text px-8 py-4">
+    <header className="top-0 left-0 right-0 flex items-center justify-between border-b-2 border-brutalist-text px-8 py-4">
       {/* Left Side: Name/Logo */}
       <div>
         <Link
