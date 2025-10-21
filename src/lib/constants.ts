@@ -4,43 +4,29 @@ export const projects = [
     client: "Anker Tattoo & Piercing",
     year: "2025",
     challenge:
-      "Modernize a legacy e-commerce platform while maintaining brand identity",
+      "Modernize and rebuild an outdated underperforming website to improve user experience and SEO",
     solution:
-      "Implemented a design system with reusable components, improved navigation architecture, and optimized checkout flow",
+      "Implemented a design system with reusable components, improved navigation architecture, and UI/UX enhancements",
     results: [
       "80% increase in SEO online visibility",
       "Total sales growth of 35%",
       "2x faster page loads",
     ],
-    image: "/projects/ecommerce.jpg",
+    image: "/projects/anker.png",
   },
   {
-    title: "SaaS Dashboard",
-    client: "TechStartup",
+    title: "Full-Stack Ratings App",
+    client: "Myself",
     year: "2024",
     challenge:
-      "Design an intuitive analytics dashboard for non-technical users",
+      "Design and develop a full-stack application to allow users to rate and save movies",
     solution:
-      "Created progressive disclosure patterns, data visualization system, and onboarding flow",
+      "Built with Python, Jinja2 and SQLAlchemy; implemented profile creation, login and dynamic content rendering",
     results: [
-      "95% user satisfaction",
-      "40% reduction in support tickets",
-      "Featured in Awwwards",
+      "Tested with 500+ movies",
+      "local database",
+      "Modularized OOP design for scalability",
     ],
-    image: "/projects/dashboard.jpg",
-  },
-  {
-    title: "Mobile Banking App",
-    client: "FinanceBank",
-    year: "2023",
-    challenge: "Simplify complex financial operations for mobile-first users",
-    solution:
-      "Developed gesture-based interactions, biometric authentication, and real-time notifications",
-    results: [
-      "4.8 App Store rating",
-      "2M+ downloads",
-      "Industry Innovation Award",
-    ],
-    image: "/projects/banking.jpg",
+    image: "/projects/popcorn.png",
   },
 ];

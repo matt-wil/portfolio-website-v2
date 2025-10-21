@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { projects } from "@/lib/constants";
+import Image from "next/image";
 
 export const BrutalistPath = () => {
   return (
@@ -39,18 +40,18 @@ export const BrutalistPath = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              Strategy-driven interfaces
+              Pixel-perfect font-ends
               <br />
-              for modern products.
+              backed by robust, full-stack solutions.
             </motion.h2>
           </motion.div>
           <div className="col-span-12 flex items-end lg:col-span-4">
             <div className="border-l-4 border-brutalist-accent pl-6 font-mono text-sm text-brutalist-text">
               <p className="mb-2 font-bold">AVAILABLE FOR</p>
-              <p>Product Design</p>
-              <p>Design Systems</p>
-              <p>UX Strategy</p>
-              <p>Brand Identity</p>
+              <p>Full-Stack Engineering</p>
+              <p>Front-End Architecture</p>
+              <p>UI/UX Design</p>
+              <p>Graphic Design</p>
             </div>
           </div>
         </section>
@@ -59,7 +60,7 @@ export const BrutalistPath = () => {
         <section className="grid grid-cols-12 gap-x-4 px-8 py-32">
           <div className="col-span-12 lg:col-span-7">
             <h2 className="mb-8 text-brutalist-h2 font-bold text-brutalist-text">
-              Design with Purpose
+              Engineering with Intent
             </h2>
             <div className="space-y-6 text-xl leading-relaxed text-brutalist-text">
               <p>
@@ -73,24 +74,24 @@ export const BrutalistPath = () => {
                 intent.
               </p>
               <p>
-                I work at the intersection of design, technology, and
-                business—translating complex requirements into elegant,
-                functional experiences.
+                I work at the intersection of technology and user experience,
+                translating complex business problems into elegant, functional,
+                and full-stack solutions.
               </p>
             </div>
           </div>
           <div className="col-span-12 mt-12 lg:col-span-4 lg:col-start-9 lg:mt-0">
             <div className="border-l-2 border-brutalist-text pl-6">
               <h3 className="mb-4 font-mono text-sm font-bold text-brutalist-text">
-                EXPERTISE
+                TECH STACK
               </h3>
               <ul className="space-y-2 font-mono text-sm text-brutalist-text">
-                <li>→ Product Strategy</li>
-                <li>→ Interface Design</li>
-                <li>→ Design Systems</li>
-                <li>→ User Research</li>
-                <li>→ Prototyping</li>
-                <li>→ Front-End Dev</li>
+                <li>→ Python</li>
+                <li>→ TypeScript</li>
+                <li>→ React</li>
+                <li>→ Node.js</li>
+                <li>→ SQL</li>
+                <li>→ Figma</li>
               </ul>
             </div>
           </div>
@@ -114,8 +115,14 @@ export const BrutalistPath = () => {
               >
                 {/* Project Image */}
                 <div className="col-span-12 lg:col-span-7">
-                  <div className="aspect-video w-full bg-gradient-to-br from-brutalist-text to-brutalist-grid grayscale">
-                    {/* Placeholder for project image */}
+                  <div className="aspect-video w-full bg-gradient-to-br from-brutalist-text to-brutalist-grid grayscale hover:grayscale-0">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      className="object-cover"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 65vw"
+                    />
                   </div>
                 </div>
 
@@ -199,13 +206,13 @@ export const BrutalistPath = () => {
             <div className="col-span-12 lg:col-span-6">
               <div className="space-y-4 font-mono text-lg text-brutalist-text">
                 <a
-                  href="mailto:hello@yourname.com"
+                  href="mailto:dark.moder.coder@gmail.com"
                   className="block hover:text-brutalist-accent hover:underline"
                 >
-                  hello@yourname.com
+                  dark.moder.coder@gmail.com
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourname"
+                  href="https://linkedin.com/in/matt-s-williams"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block hover:text-brutalist-accent hover:underline"
@@ -213,20 +220,12 @@ export const BrutalistPath = () => {
                   LinkedIn
                 </a>
                 <a
-                  href="https://dribbble.com/yourname"
+                  href="https://github.com/matt-wil"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block hover:text-brutalist-accent hover:underline"
                 >
-                  Dribbble
-                </a>
-                <a
-                  href="https://twitter.com/yourname"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block hover:text-brutalist-accent hover:underline"
-                >
-                  Twitter
+                  GitHub
                 </a>
               </div>
             </div>
