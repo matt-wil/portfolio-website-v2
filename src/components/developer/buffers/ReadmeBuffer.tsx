@@ -15,7 +15,7 @@ export const ReadmeBuffer = () => {
       />
       <div className="pt-6 space-y-4">
         <TypingText
-          text="> Full-Stack Developer & Terminal Enthusiast"
+          text="> Full-Stack Developer"
           className="text-cat-blue text-lg"
           delay={600}
         />

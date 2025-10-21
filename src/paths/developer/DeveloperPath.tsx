@@ -7,6 +7,7 @@ import { FuzzyFinder } from "@/components/developer/FuzzyFinder";
 import { ReadmeBuffer } from "@/components/developer/buffers/ReadmeBuffer";
 import { AboutBuffer } from "@/components/developer/buffers/AboutBuffer";
 import { ProjectBuffer } from "@/components/developer/buffers/ProjectBuffer";
+import { ContactBuffer } from "@/components/developer/buffers/ContactBuffer";
 
 type BufferType = "README.md" | "about.lua" | string;
 
@@ -15,18 +16,40 @@ export const DeveloperPath = () => {
   const [isFuzzyOpen, setIsFuzzyOpen] = useState(false);
   const [mode, setMode] = useState<"NORMAL" | "INSERT">("NORMAL");
   const [cursorPos, setCursorPos] = useState({ line: 1, col: 1 });
+  const [command, setCommand] = useState("");
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.key === "p") {
         e.preventDefault();
         setIsFuzzyOpen(true);
+      } else if (e.key === ":" && mode === "NORMAL") {
+        e.preventDefault();
+        setMode("INSERT");
+        setCommand(":");
+      } else if (e.key === "Escape" && command) {
+        setCommand("");
+        setMode("NORMAL");
+      } else if (e.key === "Enter" && command) {
+        e.preventDefault();
+        if (command === ":contact") {
+          setCurrentBuffer("contact.md");
+        }
+        setCommand("");
+        setMode("NORMAL");
+      } else if (command && e.key.length === 1) {
+        setCommand((prev) => prev + e.key);
+      } else if (command && e.key === "Backspace") {
+        setCommand((prev) => prev.slice(0, -1));
+        if (command === ":") {
+          setMode("NORMAL");
+        }
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [command, mode]);
 
   const handleFileSelect = (filename: string) => {
     setCurrentBuffer(filename);
@@ -41,6 +64,7 @@ export const DeveloperPath = () => {
   const getLineCount = () => {
     if (currentBuffer === "README.md") return 20;
     if (currentBuffer === "about.lua") return 35;
+    if (currentBuffer === "contact.md") return 15;
     return 25;
   };
 
@@ -49,6 +73,8 @@ export const DeveloperPath = () => {
       return <ReadmeBuffer />;
     } else if (currentBuffer === "about.lua") {
       return <AboutBuffer />;
+    } else if (currentBuffer === "contact.md") {
+      return <ContactBuffer />;
     } else if (currentBuffer.startsWith("projects/")) {
       const filename = currentBuffer.replace("projects/", "");
       return <ProjectBuffer filename={filename} />;
@@ -78,6 +104,14 @@ export const DeveloperPath = () => {
         line={cursorPos.line}
         col={cursorPos.col}
       />
+
+      {/* Command Bar */}
+      {command && (
+        <div className="border-t border-cat-surface0 bg-cat-base px-4 py-1 font-mono text-sm text-cat-text">
+          {command}
+          <span className="animate-blink">▋</span>
+        </div>
+      )}
 
       {/* Fuzzy Finder Modal */}
       <FuzzyFinder

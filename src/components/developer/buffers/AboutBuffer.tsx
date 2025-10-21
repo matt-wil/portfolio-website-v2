@@ -9,7 +9,7 @@ export const AboutBuffer = () => {
       <div className="pl-4">
         <span className="text-cat-red">name</span>{" "}
         <span className="text-cat-mauve">=</span>{" "}
-        <span className="text-cat-green">"Your Name"</span>,
+        <span className="text-cat-green">"Matt Williams"</span>,
       </div>
       <div className="pl-4">
         <span className="text-cat-red">role</span>{" "}
@@ -19,7 +19,7 @@ export const AboutBuffer = () => {
       <div className="pl-4">
         <span className="text-cat-red">location</span>{" "}
         <span className="text-cat-mauve">=</span>{" "}
-        <span className="text-cat-green">"San Francisco, CA"</span>,
+        <span className="text-cat-green">"Freiburg im Breisgau, DE"</span>,
       </div>
       <div className="pl-4">
         <span className="text-cat-red">skills</span>{" "}
@@ -36,13 +36,16 @@ export const AboutBuffer = () => {
         <span className="text-cat-green">"Node.js"</span>,
       </div>
       <div className="pl-8">
-        <span className="text-cat-green">"PostgreSQL"</span>,
+        <span className="text-cat-green">"SQL"</span>,
       </div>
       <div className="pl-8">
-        <span className="text-cat-green">"Docker"</span>,
+        <span className="text-cat-green">"Python"</span>,
       </div>
       <div className="pl-8">
         <span className="text-cat-green">"Neovim"</span>,
+      </div>
+      <div className="pl-8">
+        <span className="text-cat-green">"Rust"</span>,
       </div>
       <div className="pl-4">
         <span className="text-cat-peach">{"}"}</span>,
@@ -53,16 +56,19 @@ export const AboutBuffer = () => {
         <span className="text-cat-green">[[</span>
       </div>
       <div className="pl-8 text-cat-text">
-        Passionate about building elegant solutions to complex problems.
+        Passionate full-stack developer with a knack for building.
       </div>
       <div className="pl-8 text-cat-text">
-        I live in the terminal and believe the best code is the code you
+        Graphic Design Diploma holder turned code enthusiast. I love crafting
       </div>
       <div className="pl-8 text-cat-text">
-        don't have to write. When I'm not coding, you'll find me
+        efficient, scalable web applications and exploring new technologies.
       </div>
       <div className="pl-8 text-cat-text">
-        contributing to open source or tweaking my nvim config.
+        Often found experimenting with side projects.
+      </div>
+      <div className="pl-8 text-cat-text">
+        If im not on my computer im probably in nature or skateboarding.
       </div>
       <div className="pl-4">
         <span className="text-cat-green">]]</span>,
@@ -75,17 +81,20 @@ export const AboutBuffer = () => {
       <div className="pl-8">
         <span className="text-cat-red">email</span>{" "}
         <span className="text-cat-mauve">=</span>{" "}
-        <span className="text-cat-green">"hello@yourname.dev"</span>,
+        <span className="text-cat-green">"dark.moder.coder@gmail.com"</span>,
       </div>
       <div className="pl-8">
         <span className="text-cat-red">github</span>{" "}
         <span className="text-cat-mauve">=</span>{" "}
-        <span className="text-cat-green">"github.com/yourname"</span>,
+        <span className="text-cat-green">"github.com/matt-wil"</span>,
       </div>
       <div className="pl-8">
         <span className="text-cat-red">linkedin</span>{" "}
         <span className="text-cat-mauve">=</span>{" "}
-        <span className="text-cat-green">"linkedin.com/in/yourname"</span>,
+        <span className="text-cat-green">
+          "linkedin.com/in/matt-s-williams"
+        </span>
+        ,
       </div>
       <div className="pl-4">
         <span className="text-cat-peach">{"}"}</span>,
