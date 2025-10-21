@@ -16,17 +16,17 @@ const highlightCode = (code: string) => {
     const codePart = line.slice(indent.length);
 
     const highlightedPart = codePart
-      .replace(/const|if|return/g, '<span class="text-cat-mauve">$&</span>') // Keywords
+      .replace(/const|if|return/g, '<span class="text-dev-mauve">$&</span>') // Keywords
       .replace(
         /checkIfDeveloper|enter/g,
-        '<span class="text-cat-blue">$&</span>',
+        '<span class="text-dev-blue">$&</span>',
       ) // Function names
-      .replace(/understands/g, '<span class="text-cat-yellow">$&</span>') // Parameter
-      .replace(/boolean|void/g, '<span class="text-cat-yellow">$&</span>') // TypeScript Types
-      .replace(/true/g, '<span class="text-cat-peach">$&</span>') // Boolean
+      .replace(/understands/g, '<span class="text-dev-yellow">$&</span>') // Parameter
+      .replace(/boolean|void/g, '<span class="text-dev-yellow">$&</span>') // TypeScript Types
+      .replace(/true/g, '<span class="text-dev-peach">$&</span>') // Boolean
       .replace(
         /\{|\}|\(|\)|===|;|: |=>/g,
-        '<span class="text-cat-sky">$&</span>',
+        '<span class="text-dev-sky">$&</span>',
       ); // UPDATED: Operators/Punctuation
 
     return (

@@ -11,51 +11,38 @@
     --text-brutalist-hero: clamp(5rem, 14vw, 17rem);
     --text-brutalist-h2: clamp(2rem, 5vw, 3.5rem);
 
-    /* -- Colors -- */
+    /* -- COLOURS -- */
+    /* -- Splash -- */
     --color-splash-bg: hsl(var(--splash-bg));
     --color-splash-fg: hsl(var(--splash-fg));
     --color-splash-accent: hsl(var(--splash-accent));
-    --color-cat-base: hsl(var(--cat-base));
-    --color-cat-mantle: hsl(var(--cat-mantle));
-    --color-cat-crust: hsl(var(--cat-crust));
-    --color-cat-text: hsl(var(--cat-text));
-    --color-cat-subtext: hsl(var(--cat-subtext));
-    --color-cat-mauve: hsl(var(--cat-mauve));
-    --color-cat-blue: hsl(var(--cat-blue));
-    --color-cat-sapphire: hsl(var(--cat-sapphire));
-    --color-cat-sky: hsl(var(--cat-sky));
-    --color-cat-teal: hsl(var(--cat-teal));
-    --color-cat-green: hsl(var(--cat-green));
-    --color-cat-yellow: hsl(var(--cat-yellow));
-    --color-cat-peach: hsl(var(--cat-peach));
-    --color-cat-red: hsl(var(--cat-red));
-    --color-cat-surface0: hsl(var(--cat-surface0));
-    --color-cat-surface1: hsl(var(--cat-surface1));
-    --color-cat-overlay0: hsl(var(--cat-overlay0));
+
+    /*-- Non-Dev --*/
     --color-brutalist-bg: hsl(var(--brutalist-bg));
     --color-brutalist-text: hsl(var(--brutalist-text));
-    --color-brutalist-grid: hsl(var(--brutalist-grid));
+    --color-brutalist-grid: hsla(
+        var(--brutalist-grid)
+    ); /* Use HSLA for opacity */
     --color-brutalist-accent: hsl(var(--brutalist-accent));
 
-    /* -- General Semantic Colors -- */
-    --color-background: hsl(var(--background));
-    --color-foreground: hsl(var(--foreground));
-    --color-primary: hsl(var(--primary));
-    --color-primary-foreground: hsl(var(--primary-foreground));
-    --color-secondary: hsl(var(--secondary));
-    --color-secondary-foreground: hsl(var(--secondary-foreground));
-    --color-muted: hsl(var(--muted));
-    --color-muted-foreground: hsl(var(--muted-foreground));
-    --color-accent: hsl(var(--accent));
-    --color-destructive: hsl(var(--destructive));
-    --color-border: hsl(var(--border));
-    --color-input: hsl(var(--input));
-    --color-ring: hsl(var(--ring));
-
-    /* -- Border Radius -- */
-    --radius-lg: var(--radius);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-sm: calc(var(--radius) - 4px);
+    /* -- Dev (REFACTORED) -- */
+    /* We use generic names so we can swap themes */
+    --color-dev-base: hsl(var(--dev-base));
+    --color-dev-mantle: hsl(var(--dev-mantle));
+    --color-dev-crust: hsl(var(--dev-crust));
+    --color-dev-text: hsl(var(--dev-text));
+    --color-dev-subtext: hsl(var(--dev-subtext));
+    --color-dev-purple: hsl(var(--dev-purple)); /* Was mauve */
+    --color-dev-blue: hsl(var(--dev-blue));
+    --color-dev-sky: hsl(var(--dev-sky));
+    --color-dev-teal: hsl(var(--dev-teal));
+    --color-dev-green: hsl(var(--dev-green));
+    --color-dev-yellow: hsl(var(--dev-yellow));
+    --color-dev-orange: hsl(var(--dev-orange)); /* Was peach */
+    --color-dev-red: hsl(var(--dev-red));
+    --color-dev-surface0: hsl(var(--dev-surface0));
+    --color-dev-surface1: hsl(var(--dev-surface1));
+    --color-dev-overlay0: hsl(var(--dev-overlay0));
 
     /* -- Animation -- */
     --animation-blink: blink 1s step-end infinite;
@@ -66,58 +53,94 @@
 }
 
 @layer base {
+    /* === LIGHT MODE (DEFAULT) === */
     :root {
-        /* -- Default Theme: Catppuccin Mocha (Dark Developer) -- */
-        --background: var(--cat-base);
-        --foreground: var(--cat-text);
-        --primary: var(--cat-mauve);
-        --primary-foreground: var(--cat-base);
-        --secondary: var(--cat-surface0);
-        --secondary-foreground: var(--cat-text);
-        --muted: var(--cat-surface1);
-        --muted-foreground: var(--cat-subtext);
-        --accent: var(--cat-blue);
-        --destructive: var(--cat-red);
-        --border: var(--cat-surface0);
-        --input: var(--cat-surface1);
-        --ring: var(--cat-mauve);
-        --radius: 0.25rem;
+        /**-- Splash Theme --**/
+        --splash-bg: 220 10% 98%;
+        --splash-fg: 220 10% 10%;
+        --splash-accent: 240 100% 60%;
 
-        /* Specific Theme Palettes */
-        --splash-bg: 220 10% 5%;
-        --splash-fg: 0 0% 96%;
-        --splash-accent: 240 100% 50%;
-        --cat-base: 240 21% 15%;
-        --cat-mantle: 240 21% 12%;
-        --cat-crust: 240 23% 9%;
-        --cat-text: 226 64% 88%;
-        --cat-subtext: 227 35% 80%;
-        --cat-mauve: 267 84% 81%;
-        --cat-blue: 217 92% 76%;
-        --cat-sapphire: 199 76% 69%;
-        --cat-sky: 189 71% 73%;
-        --cat-teal: 170 57% 73%;
-        --cat-green: 115 54% 76%;
-        --cat-yellow: 41 88% 75%;
-        --cat-peach: 23 92% 75%;
-        --cat-red: 343 81% 75%;
-        --cat-surface0: 237 16% 23%;
-        --cat-surface1: 233 13% 27%;
-        --cat-overlay0: 230 13% 41%;
+        /* Non Dev (Light) */
         --brutalist-bg: 0 0% 97%;
         --brutalist-text: 0 0% 7%;
-        --brutalist-grid: 0 0% 88%;
-        --brutalist-accent: 240 100% 50%;
+        --brutalist-grid: 0 0% 88% / 0.5;
+        --brutalist-accent: 270 100% 60%;
+    }
+
+    /* === DARK MODE === */
+    @media (prefers-color-scheme: dark) {
+        :root {
+            /**-- Splash Theme --**/
+            --splash-bg: 220 10% 5%;
+            --splash-fg: 0 0% 96%;
+            --splash-accent: 240 100% 60%;
+
+            /* Non Dev */
+            --brutalist-bg: 240 3% 12%; /* Dark cool gray */
+            --brutalist-text: 0 0% 98%; /* White */
+            --brutalist-grid: 240 3% 45% / 0.1; /* Faint grid, 10% opacity */
+            --brutalist-accent: 240 100% 60%; /* Light purple/magenta */
+        }
+    }
+
+    .brutalist-grid-bg {
+        background-color: var(--color-brutalist-bg);
+        background-image:
+            linear-gradient(
+                to right,
+                var(--color-brutalist-grid) 1px,
+                transparent 1px
+            ),
+            linear-gradient(
+                to bottom,
+                var(--color-brutalist-grid) 1px,
+                transparent 1px
+            );
+        background-size: 40px 40px;
+    }
+
+    /* Default Theme: Catppuccin */
+    [data-dev-theme="catppuccin"] {
+        --dev-base: 240 21% 15%;
+        --dev-mantle: 240 21% 12%;
+        --dev-crust: 240 23% 9%;
+        --dev-text: 226 64% 88%;
+        --dev-subtext: 227 35% 80%;
+        --dev-purple: 267 84% 81%; /* Mapped from mauve */
+        --dev-blue: 217 92% 76%;
+        --dev-sky: 189 71% 73%;
+        --dev-teal: 170 57% 73%;
+        --dev-green: 115 54% 76%;
+        --dev-yellow: 41 88% 75%;
+        --dev-orange: 23 92% 75%; /* Mapped from peach */
+        --dev-red: 343 81% 75%;
+        --dev-surface0: 237 16% 23%;
+        --dev-surface1: 233 13% 27%;
+        --dev-overlay0: 230 13% 41%;
+    }
+
+    /* Theme 2: Gruvbox */
+    [data-dev-theme="gruvbox"] {
+        --dev-base: 40 10% 12%;
+        --dev-mantle: 40 10% 10%;
+        --dev-crust: 40 10% 8%;
+        --dev-text: 45 30% 88%;
+        --dev-subtext: 45 15% 70%;
+        --dev-purple: 325 36% 75%;
+        --dev-blue: 205 45% 70%;
+        --dev-sky: 190 30% 75%;
+        --dev-teal: 175 35% 65%;
+        --dev-green: 110 35% 70%;
+        --dev-yellow: 50 50% 75%;
+        --dev-orange: 20 60% 70%;
+        --dev-red: 0 50% 70%;
+        --dev-surface0: 40 8% 20%;
+        --dev-surface1: 40 6% 25%;
+        --dev-overlay0: 45 10% 35%;
     }
 }
 
-@layer base {
-    body {
-        background-color: hsl(var(--background));
-        color: hsl(var(--foreground));
-    }
-}
-
+/* -- Keyframes (keep as-is) -- */
 @keyframes blink {
     "0%, 49%" {
         opacity: 1;

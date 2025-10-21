@@ -6,7 +6,7 @@ import { BrutalistHeader } from "@/components/brutalist/BrutalHeader";
 
 export const BrutalistPath = () => {
   return (
-    <div className="min-h-screen bg-brutalist-bg font-sans">
+    <div className="min-h-screen brutalist-grid-bg text-brutalist-text font-sans">
       {/* Background Grid */}
       <div
         className="pointer-events-none fixed inset-0 opacity-100"

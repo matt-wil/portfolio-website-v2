@@ -86,7 +86,7 @@ export const DeveloperPath = () => {
       const filename = currentBuffer.replace("projects/", "");
       return <ProjectBuffer filename={filename} />;
     }
-    return <div className="text-cat-red">Buffer not found</div>;
+    return <div className="text-dev-red">Buffer not found</div>;
   };
 
   return (
@@ -95,7 +95,7 @@ export const DeveloperPath = () => {
         <DevMobilePath />
       </div>
 
-      <div className="hidden md:flex h-screen w-screen flex-col bg-cat-base font-mono text-cat-text">
+      <div className="hidden md:flex h-screen w-screen flex-col bg-dev-base font-mono text-dev-text">
         {/* CRT Scanline Effect */}
         <div
           className="pointer-events-none fixed inset-0 z-50 opacity-5"
@@ -119,7 +119,7 @@ export const DeveloperPath = () => {
 
         {/* Command Bar */}
         {command && (
-          <div className="border-t border-cat-surface0 bg-cat-base px-4 py-1 font-mono text-sm text-cat-text">
+          <div className="border-t border-dev-surface0 bg-dev-base px-4 py-1 font-mono text-sm text-dev-text">
             {command}
             <span className="animate-blink">▋</span>
           </div>

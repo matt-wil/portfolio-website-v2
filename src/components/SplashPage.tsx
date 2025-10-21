@@ -73,7 +73,7 @@ export const SplashPage = () => {
               <TypingText
                 key={hoveredSide}
                 text={codeSnippet}
-                className="ml-4 font-mono text-xl text-cat-green" // Style as code
+                className="ml-4 font-mono text-xl text-dev-green" // Style as code
                 speed={50}
               />
             )}

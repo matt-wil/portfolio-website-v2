@@ -11,21 +11,21 @@ export const ReadmeBuffer = () => {
 -- ██╔══╝  ██║   ██║██║     ██║  ╚════╝ ╚════██║   ██║   ██╔══██║██║     ██╔═██╗
 -- ██║     ╚██████╔╝███████╗███████╗    ███████║   ██║   ██║  ██║╚██████╗██║  ██╗
 -- ╚═╝      ╚═════╝ ╚══════╝╚══════╝    ╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝`}
-        className="text-cat-mauve whitespace-pre"
+        className="text-dev-mauve whitespace-pre"
         speed={5}
       />
       <div className="pt-6 space-y-4">
         <TypingText
           text="> Full-Stack Developer"
-          className="text-cat-blue text-lg"
+          className="text-dev-blue text-lg"
           delay={600}
         />
-        <div className="pt-4 text-cat-subtext space-y-2">
+        <div className="pt-4 text-dev-subtext space-y-2">
           <TypingText
             text="Welcome to my interactive portfolio. Navigate using vim-style commands:"
             delay={1000}
           />
-          <div className="pl-4 pt-2 space-y-1 text-cat-text">
+          <div className="pl-4 pt-2 space-y-1 text-dev-text">
             <TypingText
               text="• Press Ctrl+P to open the fuzzy finder"
               delay={1400}
@@ -40,7 +40,7 @@ export const ReadmeBuffer = () => {
             />
           </div>
         </div>
-        <div className="pt-6 text-cat-green">
+        <div className="pt-6 text-dev-green">
           <TypingText
             text={`print("Let's build something amazing together")`}
             delay={2200}
