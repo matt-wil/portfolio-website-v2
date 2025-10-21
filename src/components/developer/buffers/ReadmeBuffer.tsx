@@ -1,8 +1,11 @@
+import { DevThemeChanger } from "../DevThemeChanger";
 import { TypingText } from "../TypingText";
 
 export const ReadmeBuffer = () => {
   return (
     <div className="space-y-2">
+      <DevThemeChanger />
+
       <TypingText
         text={`
 -- ███████╗██╗   ██╗██╗     ██╗         ███████╗████████╗ █████╗  ██████╗██╗  ██╗
@@ -11,7 +14,7 @@ export const ReadmeBuffer = () => {
 -- ██╔══╝  ██║   ██║██║     ██║  ╚════╝ ╚════██║   ██║   ██╔══██║██║     ██╔═██╗
 -- ██║     ╚██████╔╝███████╗███████╗    ███████║   ██║   ██║  ██║╚██████╗██║  ██╗
 -- ╚═╝      ╚═════╝ ╚══════╝╚══════╝    ╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝`}
-        className="text-dev-mauve whitespace-pre"
+        className="text-dev-purple whitespace-pre"
         speed={5}
       />
       <div className="pt-6 space-y-4">

@@ -5,7 +5,7 @@ export const AboutBuffer = () => {
       <div className="text-dev-blue">local</div>{" "}
       <span className="text-dev-text">developer</span>{" "}
       <span className="text-dev-mauve">=</span>{" "}
-      <span className="text-dev-peach">{"{"}</span>
+      <span className="text-dev-orange">{"{"}</span>
       <div className="pl-4">
         <span className="text-dev-red">name</span>{" "}
         <span className="text-dev-mauve">=</span>{" "}
@@ -24,7 +24,7 @@ export const AboutBuffer = () => {
       <div className="pl-4">
         <span className="text-dev-red">skills</span>{" "}
         <span className="text-dev-mauve">=</span>{" "}
-        <span className="text-dev-peach">{"{"}</span>
+        <span className="text-dev-orange">{"{"}</span>
       </div>
       <div className="pl-8">
         <span className="text-dev-green">"TypeScript"</span>,
@@ -48,7 +48,7 @@ export const AboutBuffer = () => {
         <span className="text-dev-green">"Rust"</span>,
       </div>
       <div className="pl-4">
-        <span className="text-dev-peach">{"}"}</span>,
+        <span className="text-dev-orange">{"}"}</span>,
       </div>
       <div className="pl-4">
         <span className="text-dev-red">bio</span>{" "}
@@ -76,7 +76,7 @@ export const AboutBuffer = () => {
       <div className="pl-4">
         <span className="text-dev-red">contact</span>{" "}
         <span className="text-dev-mauve">=</span>{" "}
-        <span className="text-dev-peach">{"{"}</span>
+        <span className="text-dev-orange">{"{"}</span>
       </div>
       <div className="pl-8">
         <span className="text-dev-red">email</span>{" "}
@@ -97,10 +97,10 @@ export const AboutBuffer = () => {
         ,
       </div>
       <div className="pl-4">
-        <span className="text-dev-peach">{"}"}</span>,
+        <span className="text-dev-orange">{"}"}</span>,
       </div>
       <div>
-        <span className="text-dev-peach">{"}"}</span>
+        <span className="text-dev-orange">{"}"}</span>
       </div>
       <div className="pt-4">
         <span className="text-dev-blue">return</span>{" "}

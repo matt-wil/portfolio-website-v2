@@ -23,7 +23,7 @@ const highlightCode = (code: string) => {
       ) // Function names
       .replace(/understands/g, '<span class="text-dev-yellow">$&</span>') // Parameter
       .replace(/boolean|void/g, '<span class="text-dev-yellow">$&</span>') // TypeScript Types
-      .replace(/true/g, '<span class="text-dev-peach">$&</span>') // Boolean
+      .replace(/true/g, '<span class="text-dev-orange">$&</span>') // Boolean
       .replace(
         /\{|\}|\(|\)|===|;|: |=>/g,
         '<span class="text-dev-sky">$&</span>',

@@ -20,25 +20,22 @@
     /*-- Non-Dev --*/
     --color-brutalist-bg: hsl(var(--brutalist-bg));
     --color-brutalist-text: hsl(var(--brutalist-text));
-    --color-brutalist-grid: hsla(
-        var(--brutalist-grid)
-    ); /* Use HSLA for opacity */
+    --color-brutalist-grid: hsla(var(--brutalist-grid));
     --color-brutalist-accent: hsl(var(--brutalist-accent));
 
-    /* -- Dev (REFACTORED) -- */
-    /* We use generic names so we can swap themes */
+    /* -- Dev -- */
     --color-dev-base: hsl(var(--dev-base));
     --color-dev-mantle: hsl(var(--dev-mantle));
     --color-dev-crust: hsl(var(--dev-crust));
     --color-dev-text: hsl(var(--dev-text));
     --color-dev-subtext: hsl(var(--dev-subtext));
-    --color-dev-purple: hsl(var(--dev-purple)); /* Was mauve */
+    --color-dev-purple: hsl(var(--dev-purple));
     --color-dev-blue: hsl(var(--dev-blue));
     --color-dev-sky: hsl(var(--dev-sky));
     --color-dev-teal: hsl(var(--dev-teal));
     --color-dev-green: hsl(var(--dev-green));
     --color-dev-yellow: hsl(var(--dev-yellow));
-    --color-dev-orange: hsl(var(--dev-orange)); /* Was peach */
+    --color-dev-orange: hsl(var(--dev-orange));
     --color-dev-red: hsl(var(--dev-red));
     --color-dev-surface0: hsl(var(--dev-surface0));
     --color-dev-surface1: hsl(var(--dev-surface1));
@@ -138,9 +135,43 @@
         --dev-surface1: 40 6% 25%;
         --dev-overlay0: 45 10% 35%;
     }
+
+    /* Theme 3: Tokyo Night*/
+    [data-dev-theme="tokyo-night"] {
+        --dev-base: 238 17% 13%;
+        --dev-mantle: 240 16% 10%;
+        --dev-crust: 231 22% 19%;
+        --dev-text: 230 65% 86%;
+        --dev-subtext: 231 22% 44%;
+        --dev-purple: 257 84% 79%;
+        --dev-blue: 222 89% 73%;
+        --dev-sky: 199 100% 74%;
+        --dev-teal: 168 49% 65%;
+        --dev-green: 89 44% 64%;
+        --dev-yellow: 39 67% 64%;
+        --dev-orange: 20 100% 70%;
+        --dev-red: 350 88% 72%;
+        --dev-surface0: 230 22% 21%;
+        --dev-surface1: 230 20% 33%;
+        --dev-overlay0: 231 22% 44%;
+    }
 }
 
-/* -- Keyframes (keep as-is) -- */
+@layer components {
+    .theme-button {
+        @apply bg-dev-surface1 text-dev-subtext transition-all duration-150;
+    }
+
+    .theme-button:hover {
+        @apply text-dev-text;
+    }
+
+    .theme-button.active {
+        @apply bg-dev-purple text-dev-base font-medium;
+    }
+}
+
+/* -- Keyframes -- */
 @keyframes blink {
     "0%, 49%" {
         opacity: 1;
