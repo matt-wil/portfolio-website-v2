@@ -6,7 +6,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-dev-theme="catppuccin">
       <body>
         <main>{children}</main>
       </body>

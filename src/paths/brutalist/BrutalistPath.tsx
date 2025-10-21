@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import { projects } from "@/lib/constants";
 import Image from "next/image";
+import { SectionHeading } from "@/components/brutalist/SectionHeading";
+import { BrutalistHeader } from "@/components/brutalist/BrutalHeader";
 
 export const BrutalistPath = () => {
   return (
-    <div className="min-h-screen bg-brutalist-bg font-sans">
+    <div className="min-h-screen brutalist-grid-bg text-brutalist-text font-sans">
       {/* Background Grid */}
       <div
-        className="pointer-events-none fixed inset-0 opacity-30"
+        className="pointer-events-none fixed inset-0 opacity-100"
         style={{
           backgroundImage: `
             linear-gradient(to right, hsl(var(--brutalist-grid)) 1px, transparent 1px),
@@ -19,6 +21,7 @@ export const BrutalistPath = () => {
 
       {/* Content */}
       <div className="relative">
+        <BrutalistHeader />
         {/* Hero Section */}
         <section className="grid min-h-screen grid-cols-12 gap-x-4 px-8 py-20">
           <motion.div
@@ -32,7 +35,7 @@ export const BrutalistPath = () => {
               <br />
               THAT
               <br />
-              WORKS.
+              <span className="text-brutalist-accent">WORKS.</span>
             </h1>
             <motion.h2
               className="mt-8 text-brutalist-h2 font-bold text-brutalist-text"
@@ -40,7 +43,7 @@ export const BrutalistPath = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              Pixel-perfect font-ends
+              Creative front-ends
               <br />
               backed by robust, full-stack solutions.
             </motion.h2>
@@ -57,11 +60,11 @@ export const BrutalistPath = () => {
         </section>
 
         {/* About Section */}
-        <section className="grid grid-cols-12 gap-x-4 px-8 py-32">
+        <section id="about" className="grid grid-cols-12 gap-x-4 px-8 py-32">
           <div className="col-span-12 lg:col-span-7">
-            <h2 className="mb-8 text-brutalist-h2 font-bold text-brutalist-text">
+            <SectionHeading number="1" className="mb-8">
               Engineering with Intent
-            </h2>
+            </SectionHeading>
             <div className="space-y-6 text-xl leading-relaxed text-brutalist-text">
               <p>
                 I believe great design is invisible. It doesn't call attention
@@ -81,7 +84,7 @@ export const BrutalistPath = () => {
             </div>
           </div>
           <div className="col-span-12 mt-12 lg:col-span-4 lg:col-start-9 lg:mt-0">
-            <div className="border-l-2 border-brutalist-text pl-6">
+            <div className="border-l-4 border-brutalist-accent pl-6">
               <h3 className="mb-4 font-mono text-sm font-bold text-brutalist-text">
                 TECH STACK
               </h3>
@@ -98,10 +101,10 @@ export const BrutalistPath = () => {
         </section>
 
         {/* Projects Section */}
-        <section className="px-8 py-32">
-          <h2 className="mb-20 text-brutalist-h2 font-bold text-brutalist-text">
+        <section id="works" className="px-8 py-32">
+          <SectionHeading number="2" className="mb-8">
             Selected Works
-          </h2>
+          </SectionHeading>
 
           <div className="space-y-32">
             {projects.map((project, index) => (
@@ -169,6 +172,15 @@ export const BrutalistPath = () => {
                           </p>
                         </div>
                         <div>
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Live
+                          </a>
+                        </div>
+                        <div>
                           <h5 className="mb-1 font-mono text-xs font-bold text-brutalist-text">
                             RESULTS
                           </h5>
@@ -194,15 +206,14 @@ export const BrutalistPath = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="border-t-4 border-brutalist-text px-8 py-32">
+        <section
+          id="contact"
+          className="border-t-4 border-brutalist-text px-8 py-32 flex justify-between"
+        >
+          <SectionHeading number="3" className="mb-8">
+            Contact
+          </SectionHeading>
           <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 lg:col-span-6">
-              <h2 className="text-brutalist-h2 font-bold text-brutalist-text">
-                Let's Work
-                <br />
-                Together
-              </h2>
-            </div>
             <div className="col-span-12 lg:col-span-6">
               <div className="space-y-4 font-mono text-lg text-brutalist-text">
                 <a
